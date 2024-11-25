@@ -12,11 +12,12 @@ Grading Rubric (Be Generous!)
 - Output: 20%
 - CRITICAL: We do NOT care about print formatting, just the logic! and a simple format is fine (when printing).
 - CRITICAL: We do NOT care about code efficiency or inefficiency, just the logic! So long as the logic is fine, full grade for that part!
+- CRITICAL: Indentation is very important. If there is no proper indentation, then it means that the program has sytax error points needs to be subtracted.
 
 Output Format:
 <thinkpad>
 Grade generously with these guidelines:
-- Loop implementation (40%): Award full marks if any working loop is used
+- Loop implementation (40%): Award full marks if any working loop is used (with proper indentation)
 - Multiple calculation (40%): Award full marks if code identifies multiples of 3 in any way
 - Output (20%): Award full marks if correct multiples are displayed in any format
 When in doubt, award full marks - focus on working code over exact syntax
@@ -59,12 +60,13 @@ Grading Rubric (Be Generous!)
 - Output formatting: 30%
 - CRITICAL: We do NOT care about input validation, just the logic! Any form of input collection is fine.
 - CRITICAL: We do NOT care about code efficiency or inefficiency, just the logic! So long as the logic is fine, full grade for that part!
+- CRITICAL: Indentation is very important. If there is no proper indentation, then it means that the program has sytax error points needs to be subtracted.
 
 Output Format
 <thinkpad>
 Grade generously with these guidelines:
 - Input handling (30%): Award full marks if all three inputs (rows, columns, symbol) are collected
-- Loop implementation (40%): Award full marks if nested loops create the pattern in any way
+- Loop implementation (40%): Award full marks if nested loops create the pattern in any way (with proper indentation)
 - Output formatting (30%): Award full marks if pattern displays in rectangular shape
 When in doubt, award full marks - focus on working code over exact syntax
 </thinkpad>
@@ -106,12 +108,13 @@ Grading Rubric (Be Generous!)
 - Vowel checking: 40%
 - CRITICAL: We do NOT care about case sensitivity or special vowels (é,ë,etc), just basic vowels (a,e,i,o,u)!
 - CRITICAL: We do NOT care about code efficiency or inefficiency, just the logic! So long as the logic is fine, full grade for that part!
+- CRITICAL: Indentation is very important. If there is no proper indentation, then it means that the program has sytax error points needs to be subtracted.
 
 Output Format
 <thinkpad>
 Grade generously with these guidelines:
 - Text handling (20%): Award full marks if program uses provided text string
-- Loop implementation (40%): Award full marks if any loop processes the characters
+- Loop implementation (40%): Award full marks if any loop processes the characters (with proper indentation)
 - Vowel checking (40%): Award full marks if code identifies basic vowels in any way
 When in doubt, award full marks - focus on working code over exact syntax
 </thinkpad>
@@ -155,12 +158,13 @@ Grading Rubric (Be Generous!)
 - Output: 10%
 - CRITICAL: We do NOT care about input validation or exact category thresholds, just the logic of categorization!
 - CRITICAL: We do NOT care about code efficiency or inefficiency, just the logic! So long as the logic is fine, full grade for that part!
+- CRITICAL: Indentation is very important. If there is no proper indentation, then it means that the program has sytax error points needs to be subtracted.
 
 Output Format
 <thinkpad>
 Grade generously with these guidelines:
 - Input handling (25%): Award full marks if program collects number of scores and scores
-- Loop implementation (35%): Award full marks if loop collects scores in any way
+- Loop implementation (35%): Award full marks if loop collects scores in any way (with proper indentation)
 - Score categorization (30%): Award full marks if scores are sorted into three categories
 - Output (10%): Award full marks if category counts are displayed
 When in doubt, award full marks - focus on working code over exact syntax
@@ -204,16 +208,17 @@ Instructions:
 Grading Rubric (Be Generous!)
 
 - Input handling: 30%
-- Loop implementation: 40%
+- Loop implementation: 40% 
 - Pattern generation: 30%
 - CRITICAL: We do NOT care about case sensitivity or exact alphabet representation method!
 - CRITICAL: We do NOT care about code efficiency or inefficiency, just the logic! So long as the logic is fine, full grade for that part!
+- CRITICAL: Indentation is very important. If there is no proper indentation, then it means that the program has sytax error points needs to be subtracted.
 
 Output Format
 <thinkpad>
 Grade generously with these guidelines:
 - Input handling (30%): Award full marks if program gets number of positions
-- Loop implementation (40%): Award full marks if loop creates pattern in any way
+- Loop implementation (40%): Award full marks if loop creates pattern in any way (with proper indentation)
 - Pattern generation (30%): Award full marks if letters repeat based on position
 When in doubt, award full marks - focus on working code over exact syntax
 </thinkpad>
@@ -258,12 +263,13 @@ Grading Rubric (Be Generous!):
 - Output formatting: 10%
 - CRITICAL: We do NOT care about specific statistical methods, any reasonable calculation is fine!
 - CRITICAL: We do NOT care about code efficiency or inefficiency, just the logic! So long as the logic is fine, full grade for that part!
+- CRITICAL: Indentation is very important. If there is no proper indentation, then it means that the program has sytax error points needs to be subtracted.
 
 Output Format
 <thinkpad>
 Grade generously with these guidelines:
 - Input handling (20%): Award full marks if participant and trial counts are collected
-- Nested loop implementation (35%): Award full marks if nested loops process participants and trials
+- Nested loop implementation (35%): Award full marks if nested loops process participants and trials (with proper indentation)
 - Calculations (35%): Award full marks if basic statistics are calculated per participant
 - Output formatting (10%): Award full marks if results are displayed per participant
 When in doubt, award full marks - focus on working code over exact syntax

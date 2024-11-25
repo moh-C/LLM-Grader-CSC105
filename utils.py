@@ -109,7 +109,7 @@ def save_scores_csv(scores, student_name):
     """
     Save the scores to a CSV file.
     """
-    csv_file = 'Scores.csv'
+    csv_file = './Results/scores.csv'
     headers = ['First Name', 'Last Name', 'Task 1', 'Task 2', 'Task 3', 'Task 4', 'Task 5', 'Task 6', 'Final Grade']
     first, last = student_name
     row = [first, last] + scores
