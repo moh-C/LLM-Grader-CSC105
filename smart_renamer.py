@@ -5,7 +5,7 @@ from llm import LLM
 RENAME_PROMPT = """Given these filenames:
 {files}
 
-Please map them to Task01.py through Task05.py based on the filename patterns. 
+Please map them to Task01.py through Task06.py based on the filename patterns. 
 In <reason>, explain your mapping logic.
 Then in <mapping>, provide the mappings in this exact format (one per line):
 old_filename.py -> new_filename.py
@@ -90,7 +90,7 @@ async def process_directory(directory):
             print(f"Error renaming {old_name}: {str(e)}")
 
 async def main():
-    base_dir = "./Submissions"
+    base_dir = "./Problem"
     directories = [os.path.join(base_dir, d) for d in os.listdir(base_dir) 
                   if os.path.isdir(os.path.join(base_dir, d))]
     

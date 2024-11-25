@@ -13,23 +13,19 @@ def ensure_dir(path):
 
 def find_task_files(submission_dir):
     """
-    Find task files in the submission directory based on predefined patterns.
-    Matches patterns like: task01, task1, TASK 01, Task1, etc.
+    Find task files in the submission directory.
+    Only accepts files named like: Task1.py, task01.py, Task01.py, task1.py
     """
-    task_patterns = [
-        (1, r'(?i)(?:task|TASK)\s*(?:0?1|one)\.py$'),
-        (2, r'(?i)(?:task|TASK)\s*(?:0?2|two)\.py$'),
-        (3, r'(?i)(?:task|TASK)\s*(?:0?3|three)\.py$'),
-        (4, r'(?i)(?:task|TASK)\s*(?:0?4|four)\.py$'),
-        (5, r'(?i)(?:task|TASK)\s*(?:0?5|five)\.py$')
-    ]
-    filenames = []
-    submission_path = Path(submission_dir)
-    for _, pattern in task_patterns:
-        task_file = next((str(submission_path / f)
-                         for f in os.listdir(submission_dir) if re.match(pattern, f)), None)
-        filenames.append(task_file)
-    return filenames
+    valid_pattern = r'^[Tt]ask0?[1-5]\.py$'
+    task_files = [None] * 5  # Initialize list with None values
+    
+    for file in os.listdir(submission_dir):
+        if re.match(valid_pattern, file):
+            # Extract task number from filename
+            task_num = int(re.search(r'[1-5]', file).group()) - 1
+            task_files[task_num] = str(Path(submission_dir) / file)
+            
+    return task_files
 
 def is_valid_submission(submission_dir):
     """
