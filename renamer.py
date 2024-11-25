@@ -1,14 +1,7 @@
 import os, re
 
-def rename_directories(directory='./Submissions01'):
-    """
-    Rename directories by extracting full name and submission date from directory names.
-    Example:
-    'assignment1 - submission - John Doe - Oct 15' -> 'John Doe - Oct 15'
-    
-    Args:
-        directory (str): Path to the directory containing submission folders
-    """
+def remove_assignment_prefix(directory='./Submissions'):
+    """Transform 'assignment1 - submission - John Doe - Oct 15' to 'John Doe - Oct 15'"""
     for dir_name in os.listdir(directory):
         parts = dir_name.split(' - ')
         if len(parts) >= 4:
@@ -21,16 +14,8 @@ def rename_directories(directory='./Submissions01'):
             )
             print(f"Renamed: {dir_name} -> {new_name}")
 
-
-def check_duplicate_names(directory='./Submissions01'):
-    """
-    Check for duplicate student names in the submission directory.
-    Example:
-    If there are multiple submissions from 'John Doe', it will be reported.
-    
-    Args:
-        directory (str): Path to the directory containing submission folders
-    """
+def find_multiple_submissions(directory='./Submissions'):
+    """Find students who submitted multiple times"""
     names = {}
     pattern = re.compile(r'^(.*?)\s*-\s*(Oct|Nov)')
 
@@ -46,16 +31,8 @@ def check_duplicate_names(directory='./Submissions01'):
         for name in duplicates:
             print(name)
 
-
-def rename_to_name_only(directory='./Submissions01'):
-    """
-    Rename directories to contain only the student's name.
-    Example:
-    'John Doe - Oct 15' -> 'John Doe'
-    
-    Args:
-        directory (str): Path to the directory containing submission folders
-    """
+def remove_submission_dates(directory='./Submissions'):
+    """Transform 'John Doe - Oct 15' to 'John Doe'"""
     pattern = re.compile(r'^(.*?)\s*-\s*(Oct|Nov)')
 
     for dir_name in os.listdir(directory):
@@ -69,7 +46,21 @@ def rename_to_name_only(directory='./Submissions01'):
             )
             print(f"Renamed: {dir_name} -> {new_name}")
 
+def process_submission_directories(directory='./Submissions'):
+    """
+    Process submission directories in the following order:
+    1. Clean up directory names by removing assignment prefixes
+    2. Check for multiple submissions from same student
+    3. Optionally remove submission dates (commented by default)
+    """
+    print("Step 1: Removing assignment prefixes...")
+    remove_assignment_prefix(directory)
+    
+    print("\nStep 2: Checking for multiple submissions...")
+    find_multiple_submissions(directory)
+    
+    # print("\nStep 3: Removing submission dates...")
+    # remove_submission_dates(directory)
+
 if __name__ == "__main__":
-    rename_directories()
-    # check_duplicate_names()
-    rename_to_name_only()
+    process_submission_directories()
