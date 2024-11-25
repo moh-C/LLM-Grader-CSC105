@@ -25,3 +25,11 @@ Process submission directories in the following order:
 `content_checker.py`. We need the files to have TASK01-TASK06 formats.
 If there is a problem, dump them into `./Problem`
 If not, dump them into `./Renamed`
+
+## Step 3
+`smart_renamer.py` sends requests to LLM to rename the names smartly. LLM is gpt-4o-mini
+
+Trick is going back and forth between these 2, with some manual iterations.
+
+## Step 4
+`main.py` to grade all of the files!
