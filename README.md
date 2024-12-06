@@ -1,5 +1,7 @@
 # LLM-Grader-CSC105
 
+Just read the files (not really hard!) and adjust for your own application! You need to change the PROMPTS and the PARSER.
+
 # Folder Structure
 - `llm.py`: Main LLM class
 - `./Submissions`: Is the submission directory
