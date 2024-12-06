@@ -10,7 +10,20 @@ In <reason>, explain your mapping logic.
 Then in <mapping>, provide the mappings in this exact format (one per line):
 old_filename.py -> new_filename.py
 
-Instructions: Be concise and super critical. Look for numbers and task indicators in filenames.
+Instructions:
+1. Be concise and super critical.
+2. Look for numbers and task indicators in filenames.
+3. If there is no file extension, change it to Python (.py).
+4. If the file extension is .png or .jpg, or anything else, ignore it!
+
+For reference, here is the mapping:
+- Task01.py: Filter temperatures above freezing (0°C) from a given list.
+- Task02.py: Sort names into separate lists based on their "Mr." or "Ms." prefix.
+- Task03.py: Calculate the class average and find the highest and lowest grades from a list.
+- Task04.py: Manage a shopping list by removing purchased items and adding new ones.
+- Task05.py: Analyze text messages for greeting patterns and urgency.
+- Task06.py: Analyze social media posts for engagement and content patterns.
+
 If unsure about any mapping, say "UNSURE" and do not output any mappings.
 """
 
@@ -24,11 +37,10 @@ def extract_rename_pairs(response):
     for line in response.split('\n'):
         if '->' in line:
             old_name, new_name = line.split('->')
-            # Clean up any whitespace and ensure .py extension
+            # Clean up any whitespace
             old_name = old_name.strip()
             new_name = new_name.strip()
-            if not old_name.endswith('.py'):
-                old_name += '.py'
+            # Only ensure .py extension for the new name
             if not new_name.endswith('.py'):
                 new_name += '.py'
             pairs.append((old_name, new_name))
@@ -45,10 +57,11 @@ async def process_directory(directory):
     print(f"\nProcessing directory: {directory}")
     
     # Get all Python files in directory
-    files = [f for f in os.listdir(directory) if f.endswith('.py')]
-    if not files:
-        print(f"No Python files found in {directory}")
-        return
+    # files = [f for f in os.listdir(directory) if f.endswith('.py')]
+    files = [f for f in os.listdir(directory)]
+    # if not files:
+    #     print(f"No Python files found in {directory}")
+    #     return
 
     # Get LLM response with just filenames
     try:

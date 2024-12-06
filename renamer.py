@@ -17,7 +17,7 @@ def remove_assignment_prefix(directory='./Submissions'):
 def find_multiple_submissions(directory='./Submissions'):
     """Find students who submitted multiple times"""
     names = {}
-    pattern = re.compile(r'^(.*?)\s*-\s*(Oct|Nov)')
+    pattern = re.compile(r'^(.*?)\s*-\s*(Oct|Nov|Dec)')
 
     for dir_name in os.listdir(directory):
         match = pattern.match(dir_name)
@@ -33,7 +33,7 @@ def find_multiple_submissions(directory='./Submissions'):
 
 def remove_submission_dates(directory='./Submissions'):
     """Transform 'John Doe - Oct 15' to 'John Doe'"""
-    pattern = re.compile(r'^(.*?)\s*-\s*(Oct|Nov)')
+    pattern = re.compile(r'^(.*?)\s*-\s*(Oct|Nov|Dec)')
 
     for dir_name in os.listdir(directory):
         match = pattern.match(dir_name)
@@ -59,8 +59,8 @@ def process_submission_directories(directory='./Submissions'):
     print("\nStep 2: Checking for multiple submissions...")
     find_multiple_submissions(directory)
     
-    # print("\nStep 3: Removing submission dates...")
-    # remove_submission_dates(directory)
+    print("\nStep 3: Removing submission dates...")
+    remove_submission_dates(directory)
 
 if __name__ == "__main__":
     process_submission_directories()
