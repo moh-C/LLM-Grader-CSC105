@@ -154,13 +154,13 @@ def parse_question_five(response: str) -> dict:
 def parse_question_six(response: str) -> dict:
     patterns = {
         'thinking': r'<thinkpad>(.*?)</thinkpad>',
-        'message_analysis': {
-            'reasoning': r'<message_analysis>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<message_analysis>.*?<grade>([\d.]+)</grade>'
+        'engagement_calc': {
+            'reasoning': r'<engagement_calc>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<engagement_calc>.*?<grade>([\d.]+)</grade>'
         },
-        'pattern_matching': {
-            'reasoning': r'<pattern_matching>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<pattern_matching>.*?<grade>([\d.]+)</grade>'
+        'content_analysis': {
+            'reasoning': r'<content_analysis>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<content_analysis>.*?<grade>([\d.]+)</grade>'
         },
         'output': {
             'reasoning': r'<output>\s*<reasoning>(.*?)</reasoning>',

@@ -5,7 +5,7 @@ Instructions:
 1. Create an empty list for above-freezing temperatures
 2. Loop through the provided temperature list 
 3. Add temperatures above 0°C to the new list
-4. Print both original and filtered lists
+4. Print filtered lists
 
 Grading Rubric (Be Generous!)
 - List initialization and loop: 40%
@@ -17,14 +17,13 @@ Grading Rubric (Be Generous!)
 Example Input/Output:
 Input: temperatures = [-2, 5, -6, 3, -1, 8, 12, -4, 0, 7]
 Output:
-Original Temperatures: [-2, 5, -6, 3, -1, 8, 12, -4, 0, 7]
 Above Freezing: [5, 3, 8, 12, 7]
 
 <thinkpad>
 Grade generously with these guidelines:
 - List initialization and loop (40%): Award full marks if empty list is created and any working loop iterates through temperatures
 - Temperature filtering (40%): Award full marks if code correctly identifies temperatures > 0°C
-- Output formatting (20%): Award full marks if both lists are displayed in any readable format
+- Output formatting (20%): Award full marks if list is displayed in any readable format
 When in doubt, award full marks - focus on working logic over exact syntax
 </thinkpad>
 
@@ -146,7 +145,7 @@ When in doubt, award full marks - focus on working logic over exact syntax
             <grade>[40 or 0]</grade>
         </minmax_finding>
         <output>
-            <reasoning>[Brief: Are all results displayed clearly?]</reasoning>
+            <reasoning>[Is the above freezing properly outputted?]</reasoning>
             <grade>[20 or 0]</grade>
         </output>
     </criteria_assessment>
@@ -277,50 +276,60 @@ Solution to Grade:
 {solution}
 """
 
-TASK06 = """Grade the following Python text message analyzer program. Text Message Analyzer
-Analyze text messages for greeting patterns and urgency markers.
+TASK06 = """Grade the following Python social media analyzer program. Social Media Analyzer
+Analyze engagement metrics and hashtag patterns in social media posts using parallel lists.
 
 Instructions:
-1. Count messages starting with "Hello" or "Hi"
-2. Find the longest and shortest messages
-3. Create list of messages containing "urgent"
+1. Calculate total engagement (likes + shares) for each post
+2. Find posts with above-average engagement
+3. Count occurrences of specific hashtags (#python, #coding, #tech)
 4. Print all analysis results
 
 Grading Rubric (Be Generous!)
-- Message analysis: 40%
-- Pattern matching: 40%
+- Engagement calculations: 40%
+- Content analysis: 40%
 - Output formatting: 20%
 - CRITICAL: We do NOT care about variable names or print styling
 - CRITICAL: We do NOT care about code efficiency, just correct logic
+- CRITICAL: Code must follow the template structure with parallel lists
+
+Template Structure:
+- Given lists: posts, likes, shares
+- Required variables: python_count, coding_count, tech_count
+- Required calculations: total_engagement, average_engagement
+- Required analysis: above-average posts, hashtag counting
 
 Example Input/Output:
-Input: messages = ["Hello! Meeting at 3pm", "urgent: Please call"]
+Input:
+posts = ["Learning #python!", "Check out my #coding"]
+likes = [50, 120]
+shares = [12, 35]
+
 Output:
-Greeting Messages: 1
-Urgent Messages: 1
-Longest Message: "Hello! Meeting at 3pm" (20 chars)
-Shortest Message: "urgent: Please call" (17 chars)
+Average Engagement: 108.5
+Top Engaging Post: "Check out my #coding" (155)
+Hashtag Count: #python: 1, #coding: 1
 
 <thinkpad>
 Grade generously with these guidelines:
-- Message analysis (40%): Award full marks if code correctly counts greetings and finds message lengths
-- Pattern matching (40%): Award full marks if code identifies urgent messages and greeting patterns
-- Output formatting (20%): Award full marks if all analysis results are displayed clearly
+- Engagement calculations (40%): Award full marks if total engagement and average are correctly calculated using parallel lists
+- Content analysis (40%): Award full marks if code identifies above-average posts and counts all three hashtags (#python, #coding, #tech)
+- Output formatting (20%): Award full marks if all required metrics are displayed clearly
 When in doubt, award full marks - focus on working logic over exact syntax
 </thinkpad>
 
 <evaluation>
     <criteria_assessment>
-        <message_analysis>
-            <reasoning>[Brief: Are greetings counted and message lengths found?]</reasoning>
+        <engagement_calc>
+            <reasoning>[Brief: Are total and average engagement calculated correctly using parallel lists?]</reasoning>
             <grade>[40 or 0]</grade>
-        </message_analysis>
-        <pattern_matching>
-            <reasoning>[Brief: Are urgent messages and greetings identified?]</reasoning>
+        </engagement_calc>
+        <content_analysis>
+            <reasoning>[Brief: Are above-average posts identified and all hashtags counted?]</reasoning>
             <grade>[40 or 0]</grade>
-        </pattern_matching>
+        </content_analysis>
         <output>
-            <reasoning>[Brief: Are all results displayed clearly?]</reasoning>
+            <reasoning>[Brief: Are engagement metrics and hashtag counts displayed clearly?]</reasoning>
             <grade>[20 or 0]</grade>
         </output>
     </criteria_assessment>
