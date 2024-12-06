@@ -49,13 +49,13 @@ def parse_response(response: str, patterns: dict) -> dict:
 def parse_question_one(response: str) -> dict:
     patterns = {
         'thinking': r'<thinkpad>(.*?)</thinkpad>',
-        'loop_implementation': {
-            'reasoning': r'<loop_implementation>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<loop_implementation>.*?<grade>([\d.]+)</grade>'
+        'list_and_loop': {
+            'reasoning': r'<list_and_loop>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<list_and_loop>.*?<grade>([\d.]+)</grade>'
         },
-        'multiple_calculation': {
-            'reasoning': r'<multiple_calculation>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<multiple_calculation>.*?<grade>([\d.]+)</grade>'
+        'temperature_filtering': {
+            'reasoning': r'<temperature_filtering>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<temperature_filtering>.*?<grade>([\d.]+)</grade>'
         },
         'output': {
             'reasoning': r'<output>\s*<reasoning>(.*?)</reasoning>',
@@ -69,57 +69,13 @@ def parse_question_one(response: str) -> dict:
 def parse_question_two(response: str) -> dict:
     patterns = {
         'thinking': r'<thinkpad>(.*?)</thinkpad>',
-        'input_handling': {
-            'reasoning': r'<input_handling>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<input_handling>.*?<grade>([\d.]+)</grade>'
+        'lists_and_loop': {
+            'reasoning': r'<lists_and_loop>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<lists_and_loop>.*?<grade>([\d.]+)</grade>'
         },
-        'loop_implementation': {
-            'reasoning': r'<loop_implementation>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<loop_implementation>.*?<grade>([\d.]+)</grade>'
-        },
-        'output_formatting': {
-            'reasoning': r'<output_formatting>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<output_formatting>.*?<grade>([\d.]+)</grade>'
-        },
-        'final_score': r'<final_score>([\d.]+)</final_score>',
-        'final_feedback': r'<final_feedback>(.*?)</final_feedback>'
-    }
-    return parse_response(response, patterns)
-
-def parse_question_three(response: str) -> dict:
-    patterns = {
-        'thinking': r'<thinkpad>(.*?)</thinkpad>',
-        'text_handling': {
-            'reasoning': r'<text_handling>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<text_handling>.*?<grade>([\d.]+)</grade>'
-        },
-        'loop_implementation': {
-            'reasoning': r'<loop_implementation>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<loop_implementation>.*?<grade>([\d.]+)</grade>'
-        },
-        'vowel_checking': {
-            'reasoning': r'<vowel_checking>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<vowel_checking>.*?<grade>([\d.]+)</grade>'
-        },
-        'final_score': r'<final_score>([\d.]+)</final_score>',
-        'final_feedback': r'<final_feedback>(.*?)</final_feedback>'
-    }
-    return parse_response(response, patterns)
-
-def parse_question_four(response: str) -> dict:
-    patterns = {
-        'thinking': r'<thinkpad>(.*?)</thinkpad>',
-        'input_handling': {
-            'reasoning': r'<input_handling>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<input_handling>.*?<grade>([\d.]+)</grade>'
-        },
-        'loop_implementation': {
-            'reasoning': r'<loop_implementation>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<loop_implementation>.*?<grade>([\d.]+)</grade>'
-        },
-        'score_categorization': {
-            'reasoning': r'<score_categorization>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<score_categorization>.*?<grade>([\d.]+)</grade>'
+        'prefix_sorting': {
+            'reasoning': r'<prefix_sorting>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<prefix_sorting>.*?<grade>([\d.]+)</grade>'
         },
         'output': {
             'reasoning': r'<output>\s*<reasoning>(.*?)</reasoning>',
@@ -130,20 +86,64 @@ def parse_question_four(response: str) -> dict:
     }
     return parse_response(response, patterns)
 
+def parse_question_three(response: str) -> dict:
+    patterns = {
+        'thinking': r'<thinkpad>(.*?)</thinkpad>',
+        'calculations': {
+            'reasoning': r'<calculations>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<calculations>.*?<grade>([\d.]+)</grade>'
+        },
+        'minmax_finding': {
+            'reasoning': r'<minmax_finding>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<minmax_finding>.*?<grade>([\d.]+)</grade>'
+        },
+        'output': {
+            'reasoning': r'<output>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<output>.*?<grade>([\d.]+)</grade>'
+        },
+        'final_score': r'<final_score>([\d.]+)</final_score>',
+        'final_feedback': r'<final_feedback>(.*?)</final_feedback>'
+    }
+    return parse_response(response, patterns)
+
+def parse_question_four(response: str) -> dict:
+    patterns = {
+        'thinking': r'<thinkpad>(.*?)</thinkpad>',
+        'item_removal': {
+            'reasoning': r'<item_removal>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<item_removal>.*?<grade>([\d.]+)</grade>'
+        },
+        'item_addition': {
+            'reasoning': r'<item_addition>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<item_addition>.*?<grade>([\d.]+)</grade>'
+        },
+        'list_printing': {
+            'reasoning': r'<list_printing>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<list_printing>.*?<grade>([\d.]+)</grade>'
+        },
+        'output_format': {
+            'reasoning': r'<output_format>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<output_format>.*?<grade>([\d.]+)</grade>'
+        },
+        'final_score': r'<final_score>([\d.]+)</final_score>',
+        'final_feedback': r'<final_feedback>(.*?)</final_feedback>'
+    }
+    return parse_response(response, patterns)
+
 def parse_question_five(response: str) -> dict:
     patterns = {
         'thinking': r'<thinkpad>(.*?)</thinkpad>',
-        'input_handling': {
-            'reasoning': r'<input_handling>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<input_handling>.*?<grade>([\d.]+)</grade>'
+        'message_analysis': {
+            'reasoning': r'<message_analysis>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<message_analysis>.*?<grade>([\d.]+)</grade>'
         },
-        'loop_implementation': {
-            'reasoning': r'<loop_implementation>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<loop_implementation>.*?<grade>([\d.]+)</grade>'
+        'pattern_matching': {
+            'reasoning': r'<pattern_matching>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<pattern_matching>.*?<grade>([\d.]+)</grade>'
         },
-        'pattern_generation': {
-            'reasoning': r'<pattern_generation>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<pattern_generation>.*?<grade>([\d.]+)</grade>'
+        'output': {
+            'reasoning': r'<output>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<output>.*?<grade>([\d.]+)</grade>'
         },
         'final_score': r'<final_score>([\d.]+)</final_score>',
         'final_feedback': r'<final_feedback>(.*?)</final_feedback>'
@@ -154,21 +154,17 @@ def parse_question_five(response: str) -> dict:
 def parse_question_six(response: str) -> dict:
     patterns = {
         'thinking': r'<thinkpad>(.*?)</thinkpad>',
-        'input_handling': {
-            'reasoning': r'<input_handling>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<input_handling>.*?<grade>([\d.]+)</grade>'
+        'engagement_calc': {
+            'reasoning': r'<engagement_calc>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<engagement_calc>.*?<grade>([\d.]+)</grade>'
         },
-        'nested_loop_implementation': {
-            'reasoning': r'<nested_loop_implementation>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<nested_loop_implementation>.*?<grade>([\d.]+)</grade>'
+        'content_analysis': {
+            'reasoning': r'<content_analysis>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<content_analysis>.*?<grade>([\d.]+)</grade>'
         },
-        'calculations': {
-            'reasoning': r'<calculations>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<calculations>.*?<grade>([\d.]+)</grade>'
-        },
-        'output_formatting': {
-            'reasoning': r'<output_formatting>\s*<reasoning>(.*?)</reasoning>',
-            'grade': r'<output_formatting>.*?<grade>([\d.]+)</grade>'
+        'output': {
+            'reasoning': r'<output>\s*<reasoning>(.*?)</reasoning>',
+            'grade': r'<output>.*?<grade>([\d.]+)</grade>'
         },
         'final_score': r'<final_score>([\d.]+)</final_score>',
         'final_feedback': r'<final_feedback>(.*?)</final_feedback>'

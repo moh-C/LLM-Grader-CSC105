@@ -7,12 +7,13 @@ import asyncio
 import glob
 import os
 import shutil
+from time import sleep
 from typing import List
 
 import nest_asyncio
 from tqdm import tqdm
 
-from PROMPTS.ASS03 import (
+from PROMPTS.ASS04 import (
     TASK01, TASK02, TASK03,
     TASK04, TASK05, TASK06
 )
@@ -140,10 +141,11 @@ async def main(submission_dir: str) -> None:
 if __name__ == "__main__":
     submission_root = "Renamed"
     submission_dirs = glob.glob(os.path.join(submission_root, '*'))
-    total_batches = (len(submission_dirs) + 1) // 2  # Ceiling division
     
     # Process submissions in batches of 2 with progress bar
-    batch_size = 5
+    batch_size = 6
+    total_batches = (len(submission_dirs) + 1) // batch_size
+
     with tqdm(total=total_batches, desc="Processing batches") as pbar:
         for i in range(0, len(submission_dirs), batch_size):
             batch = submission_dirs[i:i + batch_size]
@@ -153,5 +155,6 @@ if __name__ == "__main__":
                 print(f"⏳ Queued: {' '.join(student_name)}")
             asyncio.run(process_submission_batch(batch))
             pbar.update(1)
+            sleep(45)
         
     print("\n✨ Grading completed! Check the Done directory and CSV files for results.")
